@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials/')
@@ -55,7 +57,7 @@ response.render('home.hbs', {
 });
 /*
   response.send({
-    nameApp: 'routing.incochain.com',
+    nameApp: 'routing.inco.com',
     version: {
         routing: '0.0.1',
         notes: 'developer version'
@@ -103,7 +105,7 @@ app.get('/about', (request, response) => {
   });
 /*
   response.send({
-    info: 'Routing Order for Supply Chain Management',
+    info: 'Routing Order for SCM',
     version: {
         routing: '0.0.1',
         notes: 'developer version'
@@ -131,6 +133,6 @@ app.get('/bad', (request, response) => {
 ////////////////////////////////////////////////////////////
 //
 ////////////////////////////////////////////////////////////
-app.listen(3000, () => {
-  console.log('Server is up in port 3000');
+app.listen(port, () => {
+  console.log('Server is up in port', port);
 });
