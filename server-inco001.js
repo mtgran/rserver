@@ -29,19 +29,19 @@ app.use((request, response, next) => {
   fs.appendFile('logRequestFile.txt', logRequest + '\n', (err) => {
   if (err) throw err;
 
-  //  console.log('Unable to append to the file.');
+    console.log('Info to append to the file.');
   });
 
   next();
 });
 
-
+/*
 app.use((request, response, next ) => {
 
   response.render('maintenance.hbs');
   next();
 });
-
+*/
 
 ////////////////////////////////////////////////////////////
 //
